@@ -35,6 +35,7 @@ h3 { font-weight: 600; line-height: 1.35; letter-spacing: -.02em; }
 .hero-copy > p:not(.eyebrow) { animation-delay: .16s; }
 .hero-copy .hero-actions { animation-delay: .24s; }
 .hero-actions .button { font-family: var(--font-manrope), Arial, sans-serif; font-size: 17px; font-weight: 700; line-height: 1.3; min-height: 54px; }
+.hero-actions .text-link { font-family: var(--font-manrope), Arial, sans-serif; font-size: 17px; font-weight: 700; line-height: 1.3; }
 .route-strip { width: min(960px, calc(100% - 64px)); left: max(32px, calc((100% - 1240px)/2)); transform: none; bottom: 32px; padding: 22px 26px; gap: 24px; border: 1px solid #9fc8ef30; background: linear-gradient(100deg, #06182ff2, #06182fd9); box-shadow: 0 8px 30px #00000020; font-family: var(--font-manrope), Arial, sans-serif; font-size: 19px; font-weight: 700; }
 .route-strip span { display: grid; gap: 9px; color: #fff; }
 .route-strip small { font-size: 12px; font-weight: 800; letter-spacing: .09em; color: #aad9ff; }
