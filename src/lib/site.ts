@@ -13,7 +13,12 @@ export const site = {
     addressCountry: "RU",
   },
   customsCarrierCertificate: "10000/0581 А",
+  customsCarrierCertificateIssuedAt: "11.02.2020",
   founded: "2014",
+  ogrn: "1147746755551",
+  inn: "7704867770",
+  kpp: "770401001",
+  okved: "52.29 — деятельность вспомогательная прочая, связанная с перевозками",
 } as const;
 
 export const routes = [
@@ -22,5 +27,6 @@ export const routes = [
   { href: "/tamozhennoe-oformlenie", label: "Оформление" },
   { href: "/specialnye-perevozki", label: "Специальные перевозки" },
   { href: "/o-kompanii", label: "О компании" },
+  { href: "/dokumenty", label: "Документы" },
   { href: "/kontakty", label: "Контакты" },
 ] as const;

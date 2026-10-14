@@ -8,6 +8,16 @@ export const organizationSchema = {
   url: site.url,
   logo: `${site.url}/images/vtn-trans-logo.svg`,
   foundingDate: site.founded,
+  taxID: site.inn,
+  identifier: [
+    { "@type": "PropertyValue", propertyID: "ОГРН", value: site.ogrn },
+    { "@type": "PropertyValue", propertyID: "КПП", value: site.kpp },
+    {
+      "@type": "PropertyValue",
+      propertyID: "Свидетельство таможенного перевозчика ФТС",
+      value: site.customsCarrierCertificate,
+    },
+  ],
   email: site.email,
   telephone: site.phone,
   address: {
