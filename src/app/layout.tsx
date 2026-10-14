@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./hero.css";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "ВТН ТРАНС — таможенные грузоперевозки",
     description: site.description,
-    images: [{ url: "/images/hero-customs-gate.png", width: 1680, height: 945 }],
+    images: [{ url: "/images/hero-customs-gate.webp", width: 1680, height: 945 }],
   },
   robots: { index: true, follow: true },
 };

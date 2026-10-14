@@ -1,0 +1,31 @@
+.hero { min-height: 800px; min-height: max(780px, 92svh); }
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity .8s ease; }
+.hero-video.is-playing { opacity: 1; }
+.hero-copy { margin-top: clamp(80px, 12vh, 160px); }
+.hero-copy h1 { font-size: clamp(48px, 5.1vw, 74px); line-height: 1.04; letter-spacing: -.055em; max-width: 680px; }
+.hero-copy > p:not(.eyebrow) { max-width: 410px; font-size: 18px; }
+.hero-copy > * { animation: hero-arrive .85s cubic-bezier(.2,.7,.2,1) both; }
+.hero-copy h1 { animation-delay: .08s; }
+.hero-copy > p:not(.eyebrow) { animation-delay: .16s; }
+.hero-copy .hero-actions { animation-delay: .24s; }
+.hero-motion-control { position: absolute; z-index: 3; right: max(32px, calc((100vw - 1240px)/2)); bottom: 37px; display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 15px; color: #d0e2f1; border: 1px solid #ffffff35; background: #06182f99; font-size: 12px; }
+.route-strip { width: min(760px, calc(100vw - 260px)); left: max(32px, calc((100vw - 1240px)/2)); transform: none; bottom: 40px; }
+.route-strip span { display: grid; gap: 10px; }
+.route-strip small { font-size: 9px; font-weight: 400; letter-spacing: .13em; color: #8aa8c0; }
+.route-strip i { position: relative; }
+.route-strip i::after { content: ""; position: absolute; right: 0; top: -2px; width: 5px; height: 5px; border-radius: 50%; background: #f5ac35; }
+.cargo-visual { background-image: linear-gradient(135deg, rgba(6,24,47,.15), rgba(6,24,47,.84)), url('/images/hero-customs-gate.webp'); }
+@keyframes hero-arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 850px) {
+  .hero { min-height: 810px; }
+  .hero-copy { width: calc(100% - 40px); max-width: none; margin-top: 52px; }
+  .hero-copy h1 { font-size: clamp(37px, 6.7vw, 58px); max-width: 600px; }
+  .hero-copy > p:not(.eyebrow) { font-size: 16px; max-width: 340px; }
+  .hero-image, .hero-video { object-fit: cover; object-position: 72% bottom; }
+  .hero-scrim { background: linear-gradient(180deg, #04142bf7 0%, #04142be8 35%, #04142b25 65%, #04142bf2 100%); }
+  .route-strip { left: 20px; width: calc(100% - 40px); bottom: 35px; }
+  .route-strip small { font-size: 8px; letter-spacing: .04em; }
+  .hero-motion-control { display: none; }
+  .hero-actions { gap: 20px; flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-copy > * { animation: none; } .hero-video { transition: none; } .hero-motion-control { display: none; } }
