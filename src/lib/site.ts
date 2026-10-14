@@ -12,7 +12,7 @@ export const site = {
     postalCode: "119435",
     addressCountry: "RU",
   },
-  customsCarrierCertificate: "10000/0581 А",
+  customsCarrierCertificate: "10000/0581А",
   customsCarrierCertificateIssuedAt: "11.02.2020",
   founded: "2014",
   ogrn: "1147746755551",
