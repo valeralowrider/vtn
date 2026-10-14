@@ -7,7 +7,9 @@ const leadSchema = z.object({
   origin: z.string().trim().max(120).optional(),
   destination: z.string().trim().max(120).optional(),
   cargo: z.string().trim().min(10).max(2000),
-  website: z.string().max(0).optional(),
+  services: z.array(z.enum(["transport", "customs", "consultation"])).max(3),
+  consent: z.literal(true),
+  website: z.string().max(200).optional(),
 });
 
 export async function POST(request: Request) {
@@ -17,11 +19,7 @@ export async function POST(request: Request) {
 
   const webhook = process.env.LEAD_WEBHOOK_URL;
   if (!webhook) {
-    if (process.env.NODE_ENV === "production") {
-      return NextResponse.json({ error: "Форма временно недоступна. Позвоните нам." }, { status: 503 });
-    }
-    console.info("VTN TRANS lead", parsed.data);
-    return NextResponse.json({ ok: true, mode: "development" }, { status: 202 });
+    return NextResponse.json({ error: "Форма временно недоступна. Позвоните нам." }, { status: 503 });
   }
 
   const response = await fetch(webhook, {

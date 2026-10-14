@@ -1,0 +1,105 @@
+.lead-form {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 44px);
+  border: 1px solid rgba(147, 190, 229, .28);
+  border-radius: 2px;
+  background: linear-gradient(145deg, rgba(22, 62, 102, .68), rgba(9, 34, 64, .95));
+  box-shadow: 0 28px 65px rgba(0, 8, 24, .2);
+  font-family: var(--font-manrope), Arial, sans-serif;
+}
+
+.lead-form__topline {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(190, 216, 240, .2);
+  color: #8faeca;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.lead-form__services { min-width: 0; margin: 28px 0 32px; padding: 0; border: 0; }
+.lead-form__services legend,
+.lead-form__field label { margin-bottom: 11px; color: #eaf3fb; font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
+.lead-form__services legend { padding: 0; }
+.lead-form__service-list { display: flex; flex-wrap: wrap; gap: 9px; }
+.lead-form__service { position: relative; display: block; cursor: pointer; }
+.lead-form__service input { position: absolute; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.lead-form__service span { display: block; padding: 10px 14px; border: 1px solid rgba(172, 203, 230, .31); border-radius: 2px; color: #b5cade; background: rgba(5, 24, 47, .35); font-size: 12px; font-weight: 600; line-height: 1.3; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+.lead-form__service input:checked + span { border-color: #80c5f5; color: #fff; background: rgba(17, 111, 187, .4); }
+.lead-form__service input:is(:hover, :focus-visible) + span { border-color: #f5ac35; color: #fff; }
+.lead-form__service input:focus-visible + span,
+.lead-form__consent input:focus-visible { outline: 2px solid #f5ac35; outline-offset: 3px; }
+
+.lead-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 18px; }
+.lead-form__field { display: flex; min-width: 0; flex-direction: column; }
+.lead-form__field label { display: block; }
+.lead-form__field label span { color: #f5ac35; }
+.lead-form__field input,
+.lead-form__field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid rgba(172, 203, 230, .28);
+  border-radius: 2px;
+  outline: none;
+  color: #f8fbff;
+  background: rgba(4, 23, 46, .64);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.45;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  appearance: none;
+}
+.lead-form__field input::placeholder,
+.lead-form__field textarea::placeholder { color: #8ea8c1; opacity: 1; }
+.lead-form__field input:is(:hover, :focus),
+.lead-form__field textarea:is(:hover, :focus) { border-color: #8ccaf4; background: rgba(6, 29, 56, .94); }
+.lead-form__field input:focus-visible,
+.lead-form__field textarea:focus-visible { box-shadow: 0 0 0 3px rgba(53, 158, 234, .2); }
+.lead-form__field input[aria-invalid="true"],
+.lead-form__field textarea[aria-invalid="true"] { border-color: #f6a98d; }
+.lead-form__field--wide { margin-top: 25px; }
+.lead-form__field textarea { min-height: 116px; resize: vertical; }
+.lead-form__error { display: block; margin-top: 8px; color: #ffbaa1; font-size: 12px; line-height: 1.4; }
+.lead-form__honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.lead-form__bottom { display: grid; gap: 25px; margin-top: 25px; padding-top: 27px; border-top: 1px solid rgba(190, 216, 240, .2); }
+.lead-form__consent { display: grid; grid-template-columns: 21px minmax(0, 1fr); gap: 13px; align-items: start; cursor: pointer; }
+.lead-form__consent input { width: 21px; height: 21px; margin: 2px 0 0; border: 1px solid #a8bfd2; border-radius: 2px; background: rgba(2, 20, 40, .8); cursor: pointer; appearance: none; }
+.lead-form__consent input:checked { border-color: #f5ac35; background: #f5ac35; }
+.lead-form__consent input:checked::after { display: block; width: 11px; height: 6px; margin: 4px 0 0 4px; border-bottom: 2px solid #0b243c; border-left: 2px solid #0b243c; content: ""; transform: rotate(-45deg); }
+.lead-form__consent > span { color: #d9e7f3; font-size: 13px; line-height: 1.5; }
+.lead-form__data-note { max-width: 540px; margin: 9px 0 0 34px; color: #93adc5; font-size: 11px; line-height: 1.5; }
+.lead-form__data-note a { color: #bedef4; text-decoration: underline; text-underline-offset: 3px; }
+.lead-form__submit { display: flex; width: 100%; min-height: 59px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 22px; border: 1px solid #f5ac35; border-radius: 2px; color: #152539; background: #f5ac35; font: inherit; font-size: 17px; font-weight: 700; letter-spacing: -.02em; cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; appearance: none; }
+.lead-form__submit > span:last-child { font-size: 21px; font-weight: 400; transition: transform .2s ease; }
+.lead-form__submit:is(:hover, :focus-visible) { background: #ffbf57; box-shadow: 0 8px 22px rgba(245, 172, 53, .15); }
+.lead-form__submit:is(:hover, :focus-visible) > span:last-child { transform: translate(3px, -3px); }
+.lead-form__submit:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.lead-form__submit:disabled { cursor: wait; opacity: .7; }
+.lead-form__status:empty { display: none; }
+.lead-form__status p { margin: 17px 0 0; font-size: 13px; line-height: 1.5; }
+.lead-form__status--success { color: #9fe1c2; }
+.lead-form__status--error { color: #ffbaa1; }
+.lead-form__status--error a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+.contact-request { padding: 25px 20px 120px; background: #06182f; }
+.contact-request .lead-form { width: min(720px, 100%); margin: 0 auto; }
+
+@media (max-width: 650px) {
+  .lead-form { padding: 23px 19px; }
+  .lead-form__grid { grid-template-columns: minmax(0, 1fr); gap: 21px; }
+  .lead-form__services { margin-bottom: 27px; }
+  .lead-form__service span { padding: 9px 11px; }
+  .contact-request { padding-bottom: 80px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lead-form__service span,
+  .lead-form__field input,
+  .lead-form__field textarea,
+  .lead-form__submit,
+  .lead-form__submit > span:last-child { transition: none; }
+}
