@@ -1,4 +1,13 @@
 .hero { min-height: 800px; min-height: max(780px, 92svh); }
+.site-header { grid-template-columns: 1fr auto auto 190px; }
+.site-header > a:first-child { grid-column: 4; grid-row: 1; justify-self: end; }
+.site-header > nav { grid-column: 1; grid-row: 1; }
+.site-header > .header-phone { grid-column: 2; grid-row: 1; }
+.site-header > .button { grid-column: 3; grid-row: 1; }
+.site-header img { filter: none; width: 190px; }
+.hero-image, .hero-video { transform: translateX(3%) scale(1.06); }
+.hero-scrim { z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(4,20,43,.96) 0%, rgba(4,20,43,.84) 16%, rgba(4,20,43,.48) 27%, rgba(4,20,43,0) 38%); }
+.hero-copy, .route-strip { z-index: 2; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity .8s ease; }
 .hero-video.is-playing { opacity: 1; }
 .hero-copy { margin-top: clamp(80px, 12vh, 160px); }
@@ -17,11 +26,15 @@
 .cargo-visual { background-image: linear-gradient(135deg, rgba(6,24,47,.15), rgba(6,24,47,.84)), url('/images/hero-customs-gate.webp'); }
 @keyframes hero-arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 850px) {
+  .site-header { grid-template-columns: 1fr auto; }
+  .site-header > a:first-child { grid-column: 2; }
+  .site-header > .button { grid-column: 1; justify-self: start; }
+  .site-header img { width: 140px; }
   .hero { min-height: 810px; }
   .hero-copy { width: calc(100% - 40px); max-width: none; margin-top: 52px; }
   .hero-copy h1 { font-size: clamp(37px, 6.7vw, 58px); max-width: 600px; }
   .hero-copy > p:not(.eyebrow) { font-size: 16px; max-width: 340px; }
-  .hero-image, .hero-video { object-fit: cover; object-position: 72% bottom; }
+  .hero-image, .hero-video { object-fit: cover; object-position: 72% bottom; transform: none; }
   .hero-scrim { background: linear-gradient(180deg, #04142bf7 0%, #04142be8 35%, #04142b25 65%, #04142bf2 100%); }
   .route-strip { left: 20px; width: calc(100% - 40px); bottom: 35px; }
   .route-strip small { font-size: 8px; letter-spacing: .04em; }
