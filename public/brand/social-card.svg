@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg"><stop stop-color="#06182f"/><stop offset="1" stop-color="#0b355d"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="none" stroke="#2486ca" opacity=".25" stroke-width="2">
+    <path d="M810 0v630M930 0v630M1050 0v630M1170 0v630M750 110h450M750 230h450M750 350h450M750 470h450M750 590h450"/>
+    <path d="M800 440V170h270v270Z" stroke-width="3"/>
+  </g>
+  <path d="M810 410h220l80-80" stroke="#f5ac35" stroke-width="5" fill="none"/>
+  <circle cx="1110" cy="330" r="9" fill="#f5ac35"/>
+  <g transform="translate(60 54) scale(1.5)" color="#ffffff"><path d="M9 22h7a5 5 0 0 1 0 10H9m7 0a5 5 0 0 1 0 10H9V22M27 22h13m-6.5 0v20M46 22v20m12-20v20M46 32h12" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/></g>
+  <text x="176" y="108" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#ffffff">ВТН ТРАНС</text>
+  <text x="72" y="246" font-family="Arial, sans-serif" font-size="62" font-weight="700" fill="#ffffff">Таможенные</text>
+  <text x="72" y="322" font-family="Arial, sans-serif" font-size="62" font-weight="700" fill="#ffffff">грузоперевозки</text>
+  <text x="76" y="390" font-family="Arial, sans-serif" font-size="26" fill="#bed5e8">Под контролем на всём маршруте</text>
+  <path d="M76 488h620" stroke="#5480a4" stroke-opacity=".5"/>
+  <text x="76" y="540" font-family="Arial, sans-serif" font-size="21" fill="#a9cbe7">ПЕРЕВОЗКА · ОФОРМЛЕНИЕ · СОПРОВОЖДЕНИЕ</text>
+</svg>

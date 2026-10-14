@@ -16,13 +16,31 @@ export const metadata: Metadata = {
   title: { default: "ВТН ТРАНС — таможенные грузоперевозки", template: "%s | ВТН ТРАНС" },
   description: site.description,
   alternates: { canonical: "/" },
+  applicationName: site.name,
+  icons: {
+    icon: [
+      { url: "/brand/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/icon-light.svg", type: "image/svg+xml", media: "(prefers-color-scheme: light)" },
+      { url: "/brand/icon-dark.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: [{ url: "/brand/icon-180.png", sizes: "180x180", type: "image/png" }],
+    other: [{ rel: "mask-icon", url: "/brand/safari-pinned-tab.svg", color: "#0875df" }],
+  },
+  appleWebApp: { capable: true, title: site.name, statusBarStyle: "black-translucent" },
+  other: { "msapplication-TileColor": "#06182f", "msapplication-config": "/browserconfig.xml" },
   openGraph: {
     type: "website",
     locale: "ru_RU",
     siteName: site.name,
     title: "ВТН ТРАНС — таможенные грузоперевозки",
     description: site.description,
-    images: [{ url: "/images/hero-customs-gate.webp", width: 1680, height: 945 }],
+    images: [{ url: "/brand/social-card.png", width: 1200, height: 630, alt: "ВТН ТРАНС — таможенные грузоперевозки" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ВТН ТРАНС — таможенные грузоперевозки",
+    description: site.description,
+    images: [{ url: "/brand/social-card.png", alt: "ВТН ТРАНС — под контролем на всём маршруте" }],
   },
   robots: { index: true, follow: true },
 };
