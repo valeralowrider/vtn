@@ -1,0 +1,25 @@
+import Image from "next/image";
+import Link from "next/link";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SiteHeader } from "@/components/sections/SiteHeader";
+import { LeadForm } from "@/components/ui/LeadForm";
+import { organizationSchema, serviceSchemas } from "@/lib/schema";
+import { site } from "@/lib/site";
+
+const situations = [
+  ["01", "Груз прибыл, но ещё не выпущен", "Забираем груз, перевозим под пломбами и доставляем к месту оформления."],
+  ["02", "Оформление в другом городе", "Выстраиваем маршрут от места прибытия до выбранного таможенного поста."],
+  ["03", "Сложная перевозка", "Соединяем транспорт, документы и сопровождение в одну управляемую операцию."],
+];
+
+export default function Home() {
+  return <main><JsonLd data={[organizationSchema, ...serviceSchemas]} /><section className="hero"><Image className="hero-image" src="/images/hero-customs-gate.png" alt="Грузовой автомобиль проходит таможенный контроль ночью" fill priority sizes="100vw" /><div className="hero-scrim" /><SiteHeader /><div className="hero-copy"><p className="eyebrow">ТАМОЖЕННЫЙ ПЕРЕВОЗЧИК · С {site.founded} ГОДА</p><h1>Таможенный груз —<br />под контролем<br />на всём маршруте</h1><p>Берём груз под пломбу, доставляем к месту оформления и сопровождаем выпуск.</p><div className="hero-actions"><a className="button button--amber" href="#request">Рассчитать перевозку <span aria-hidden>↗</span></a><Link className="text-link" href="/kontakty">Консультация <span aria-hidden>→</span></Link></div></div><div className="route-strip" aria-label="Пример маршрута"><span>Шереметьево</span><i /><span>Нижний Новгород</span><i /><span>Оформление</span></div></section>
+    <section className="section section--light"><div className="split-copy"><p className="eyebrow eyebrow--dark">РЕШЕНИЯ ДЛЯ БИЗНЕСА</p><h2>Когда нужен<br />таможенный перевозчик</h2>{situations.map(([number, title, text]) => <article className="numbered" key={number}><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div><div className="process-visual" aria-hidden><span>ПЛОМБА</span><b /><span>ТРАНЗИТ</span><b /><span>ВЫПУСК</span></div></section>
+    <section className="section section--dark section--reverse"><div className="broker-visual" aria-hidden><span>ПЕРЕВОЗКА</span><i>→</i><span>ДЕКЛАРАЦИЯ</span><i>→</i><span>ВЫПУСК</span></div><div className="split-copy"><p className="eyebrow">ЕДИНЫЙ ПРОЦЕСС</p><h2>Транспорт и брокер — одна команда</h2><p>Собственные брокеры готовят документы, сопровождают операции на таможне и остаются на связи, пока груз не выпущен.</p><Link className="text-link text-link--light" href="/tamozhennoe-oformlenie">Как проходит оформление <span aria-hidden>→</span></Link></div></section>
+    <section className="section section--light"><div className="split-copy"><p className="eyebrow eyebrow--dark">СПЕЦИАЛЬНЫЕ УСЛОВИЯ</p><h2>Перевозка, в которой учтены детали</h2><ul className="feature-list"><li>Груз под пломбами и печатями</li><li>Специально оборудованный транспорт</li><li>Сопровождение по согласованной задаче</li><li>Сложные категории грузов</li></ul></div><div className="cargo-visual" aria-hidden><div>20′ / 40′</div><div>ПОД КОНТРОЛЕМ</div></div></section>
+    <section className="route-section"><div><p className="eyebrow">ПРОЗРАЧНЫЙ МАРШРУТ</p><h2>Маршрут виден<br />до выпуска</h2><p>Понимаете, где находится груз и какой этап следует дальше.</p></div><div className="route-map" aria-hidden><span>АЭРОПОРТ</span><i /><span>ТАМОЖЕННЫЙ ПОСТ</span><i /><span>СКЛАД</span></div></section>
+    <section className="proof section--light"><div><p className="eyebrow eyebrow--dark">ОСНОВАНИЯ ДЛЯ ДОВЕРИЯ</p><h2>Работаем в регулируемой сфере</h2><p>Свидетельство таможенного перевозчика ФТС № {site.customsCarrierCertificate}. ООО «ВТН ТРАНС» работает с {site.founded} года.</p></div><div className="certificate" aria-hidden><small>ФЕДЕРАЛЬНАЯ ТАМОЖЕННАЯ СЛУЖБА</small><strong>СВИДЕТЕЛЬСТВО</strong><span>таможенного перевозчика</span></div></section>
+    <section id="request" className="request"><div><p className="eyebrow">ПЕРСОНАЛЬНОЕ РЕШЕНИЕ</p><h2>Опишите задачу — предложим маршрут и порядок оформления</h2><p>Начнём с вводных и вернёмся с понятным порядком действий.</p></div><LeadForm /></section>
+    <footer><Image src="/images/vtn-trans-logo.svg" alt="ВТН ТРАНС" width={190} height={72} /><p>{site.description}</p><a href={`mailto:${site.email}`}>{site.email}</a><a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a></footer>
+  </main>;
+}
