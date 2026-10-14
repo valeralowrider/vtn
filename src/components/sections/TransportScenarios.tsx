@@ -37,7 +37,27 @@ const scenarios = [
 
 export function TransportScenarios() {
   const [active, setActive] = useState(0);
+  const [visibleImage, setVisibleImage] = useState(0);
+  const [requestedImages, setRequestedImages] = useState<number[]>([0]);
+  const [loadedImages, setLoadedImages] = useState<number[]>([0]);
+  const [failedImages, setFailedImages] = useState<number[]>([]);
   const current = scenarios[active];
+
+  function selectScenario(index: number) {
+    setActive(index);
+    setRequestedImages((current) => current.includes(index) ? current : [...current, index]);
+    if (loadedImages.includes(index) || failedImages.includes(index)) setVisibleImage(index);
+  }
+
+  function imageLoaded(index: number) {
+    setLoadedImages((current) => current.includes(index) ? current : [...current, index]);
+    if (active === index) setVisibleImage(index);
+  }
+
+  function imageFailed(index: number) {
+    setFailedImages((current) => current.includes(index) ? current : [...current, index]);
+    if (active === index) setVisibleImage(index);
+  }
 
   return (
     <section className="scenarios" id="transport-scenarios" aria-labelledby="scenarios-heading">
@@ -48,7 +68,7 @@ export function TransportScenarios() {
           <p className="scenarios-intro">Груз уже в пути. Мы подключаемся там, где перевозка требует таможенного контроля.</p>
           <div className="scenario-options" role="group" aria-label="Выберите сценарий перевозки">
             {scenarios.map((scenario, index) => (
-              <button key={scenario.title} type="button" className="scenario-option" aria-pressed={active === index} aria-controls="scenario-illustration" onClick={() => setActive(index)}>
+              <button key={scenario.title} type="button" className="scenario-option" aria-pressed={active === index} aria-controls="scenario-illustration" onClick={() => selectScenario(index)}>
                 <span className="scenario-number">{String(index + 1).padStart(2, "0")}</span>
                 <span className="scenario-option-copy"><span className="scenario-option-title">{scenario.title}</span><span className="scenario-option-text">{scenario.text}</span></span>
                 <svg className="scenario-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
@@ -60,19 +80,23 @@ export function TransportScenarios() {
         <div className="scenario-plate" id="scenario-illustration">
           <div className="scenario-plate-heading"><span>СЦЕНАРИЙ ПЕРЕВОЗКИ</span><span>0{active + 1} / 03</span></div>
           <div className="scenario-visuals">
-            {scenarios.map((scenario, index) => (
+            {scenarios.map((scenario, index) => requestedImages.includes(index) && (
               <Image
                 key={scenario.image}
                 className="scenario-drawing"
-                data-active={active === index}
+                data-active={visibleImage === index}
+                data-failed={failedImages.includes(index)}
                 src={scenario.image}
                 alt={scenario.imageAlt}
-                aria-hidden={active !== index}
+                aria-hidden={visibleImage !== index || failedImages.includes(index)}
                 width={1000}
                 height={800}
                 sizes="(max-width: 850px) calc(100vw - 80px), 560px"
+                onLoad={() => imageLoaded(index)}
+                onError={() => imageFailed(index)}
               />
             ))}
+            {failedImages.includes(visibleImage) && <p className="scenario-image-error" role="status">Иллюстрация недоступна. Описание сценария приведено ниже.</p>}
           </div>
           <div className="scenario-caption" aria-live="polite" aria-atomic="true">
             <div key={active} className="scenario-caption-content">
