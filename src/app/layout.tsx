@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: "ВТН ТРАНС — таможенные грузоперевозки", template: "%s | ВТН ТРАНС" },
   description: site.description,
-  alternates: { canonical: "/" },
   applicationName: site.name,
   icons: {
     icon: [
@@ -33,6 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ru_RU",
     siteName: site.name,
+    url: "/",
     title: "ВТН ТРАНС — таможенные грузоперевозки",
     description: site.description,
     images: [{ url: "/brand/social-card.png", width: 1200, height: 630, alt: "ВТН ТРАНС — таможенные грузоперевозки" }],

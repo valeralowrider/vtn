@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteHeader } from "@/components/sections/SiteHeader";
+import { pageMetadata } from "@/lib/metadata";
 import { organizationSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./document-scans.css";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: "/dokumenty",
   title: "Документы и реквизиты",
   description: "Сканы свидетельства ФТС и налогового свидетельства ООО «ВТН ТРАНС», номер свидетельства таможенного перевозчика, ОГРН, ИНН и КПП.",
-};
+});
 
 const documents = [
   ["Свидетельство таможенного перевозчика", `ФТС № ${site.customsCarrierCertificate} от ${site.customsCarrierCertificateIssuedAt}`],

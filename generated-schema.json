@@ -1,0 +1,25 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://vtntrans.ru/#website",
+    "name": "ВТН ТРАНС",
+    "url": "https://vtntrans.ru/",
+    "publisher": { "@id": "https://vtntrans.ru/#organization" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://vtntrans.ru/tamozhennye-perevozki#service",
+    "name": "Таможенные перевозки",
+    "description": "Организуем перевозку груза под таможенными пломбами от места прибытия до места оформления.",
+    "url": "https://vtntrans.ru/tamozhennye-perevozki",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://vtntrans.ru/#organization",
+      "name": "ООО «ВТН ТРАНС»",
+      "url": "https://vtntrans.ru/"
+    },
+    "areaServed": { "@type": "Country", "name": "Россия" }
+  }
+]
