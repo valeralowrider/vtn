@@ -4,7 +4,7 @@
   Primary type: Arial Black / Arial Bold (available on Windows), with geometric fallbacks.
   Tagline: Arial / Liberation Sans with manually controlled tracking.
 -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="290" viewBox="40 140 1170 290" role="img" aria-labelledby="title description">
   <title id="title">ВТН ТРАНС</title>
   <desc id="description">Логотип ВТН ТРАНС — таможенные грузоперевозки.</desc>
   <defs>
@@ -28,7 +28,8 @@
   <text x="52" y="409"
         fill="#ffffff"
         font-family="Arial, Helvetica, sans-serif"
-        font-size="47"
-        font-weight="500"
-        letter-spacing="13">ТАМОЖЕННЫЕ ГРУЗОПЕРЕВОЗКИ</text>
+        font-size="60"
+        font-weight="600"
+        textLength="1130"
+        lengthAdjust="spacingAndGlyphs">ТАМОЖЕННЫЕ ГРУЗОПЕРЕВОЗКИ</text>
 </svg>
