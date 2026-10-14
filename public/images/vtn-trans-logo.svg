@@ -7,22 +7,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1170" height="290" viewBox="40 140 1170 290" role="img" aria-labelledby="title description">
   <title id="title">ВТН ТРАНС</title>
   <desc id="description">Логотип ВТН ТРАНС — таможенные грузоперевозки.</desc>
-  <defs>
-    <linearGradient id="brand-blue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#082c61"/>
-      <stop offset="0.42" stop-color="#0758bc"/>
-      <stop offset="0.68" stop-color="#0a83e7"/>
-      <stop offset="1" stop-color="#0063c6"/>
-    </linearGradient>
-  </defs>
 
   <!-- Main name: intentionally typeset, not auto-traced from the supplied raster. -->
   <text x="46" y="289"
-        fill="url(#brand-blue)"
+        fill="#ffffff"
         font-family="Arial Black, Arial, Helvetica, sans-serif"
         font-size="185"
         font-weight="900"
-        letter-spacing="-6">ВТН ТРАНС</text>
+        letter-spacing="-6"><tspan>ВТН </tspan><tspan fill="#8dd0ff">ТРАНС</tspan></text>
 
   <!-- Wide, light technical tagline to match the original hierarchy. -->
   <text x="52" y="409"
