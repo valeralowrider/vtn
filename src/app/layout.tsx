@@ -1,7 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import "./hero.css";
 import { site } from "@/lib/site";
+
+const manrope = localFont({
+  src: "./fonts/Manrope-Variable.ttf",
+  weight: "200 800",
+  display: "swap",
+  variable: "--font-manrope",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -22,5 +30,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#06182f", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru"><body>{children}</body></html>;
+  return <html lang="ru" className={manrope.variable}><body>{children}</body></html>;
 }
