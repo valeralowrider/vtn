@@ -26,7 +26,7 @@ export default function DocumentsPage() {
     <SiteHeader />
     <section className="inner-hero">
       <p className="eyebrow">ПРОВЕРЯЕМЫЕ СВЕДЕНИЯ</p>
-      <h1>Документы<br />и реквизиты</h1>
+      <h1 id="main-content" tabIndex={-1}>Документы<br />и реквизиты</h1>
       <p>Сканы свидетельства ФТС и налогового свидетельства доступны для просмотра. Основные реквизиты приводим текстом, чтобы их было удобно проверить.</p>
     </section>
     <section className="inner-content documents-content">

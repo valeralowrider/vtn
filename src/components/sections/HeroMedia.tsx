@@ -36,7 +36,7 @@ export function HeroMedia() {
   }, []);
 
   return <>
-    <Image className="hero-image" src="/images/hero-poster.webp" alt="Синий контейнеровоз ВТН ТРАНС на ночной дороге" fill priority sizes="100vw" />
+    <Image className="hero-image" src="/images/hero-poster.webp" alt="" fill priority sizes="100vw" />
     <video ref={videoRef} className={`hero-video${playing ? " is-playing" : ""}`} muted loop playsInline preload="none" aria-hidden="true" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
   </>;
 }

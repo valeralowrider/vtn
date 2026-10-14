@@ -62,6 +62,7 @@ export function LeadForm() {
         ? current.services.filter((item) => item !== service)
         : [...current.services, service],
     }));
+    if (status !== "idle") setStatus("idle");
   }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -72,7 +73,8 @@ export function LeadForm() {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length) {
       const firstField = (Object.keys(nextErrors) as Field[])[0];
-      event.currentTarget.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+      const formElement = event.currentTarget;
+      requestAnimationFrame(() => formElement.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus());
       return;
     }
 
@@ -99,7 +101,7 @@ export function LeadForm() {
         <div className="lead-form__service-list">
           {serviceOptions.map((option) => (
             <label className="lead-form__service" key={option.value}>
-              <input type="checkbox" value={option.value} checked={form.services.includes(option.value)} onChange={() => toggleService(option.value)} />
+              <input type="checkbox" value={option.value} checked={form.services.includes(option.value)} onChange={() => toggleService(option.value)} disabled={status === "pending"} />
               <span>{option.label}</span>
             </label>
           ))}
@@ -109,36 +111,36 @@ export function LeadForm() {
       <div className="lead-form__grid">
         <div className="lead-form__field">
           <label htmlFor="lead-name">Ваше имя <span aria-hidden="true">*</span></label>
-          <input id="lead-name" name="name" value={form.name} onChange={update("name")} placeholder="Как к вам обращаться" autoComplete="name" maxLength={80} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "lead-name-error" : undefined} />
+          <input id="lead-name" name="name" value={form.name} onChange={update("name")} placeholder="Как к вам обращаться" autoComplete="name" maxLength={80} required disabled={status === "pending"} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "lead-name-error" : undefined} />
           {errors.name && <span className="lead-form__error" id="lead-name-error">{errors.name}</span>}
         </div>
         <div className="lead-form__field">
           <label htmlFor="lead-contact">Телефон или почта <span aria-hidden="true">*</span></label>
-          <input id="lead-contact" name="contact" value={form.contact} onChange={update("contact")} placeholder="+7 999 000-00-00" autoComplete="tel" maxLength={160} aria-invalid={Boolean(errors.contact)} aria-describedby={errors.contact ? "lead-contact-error" : undefined} />
+          <input id="lead-contact" name="contact" value={form.contact} onChange={update("contact")} placeholder="+7 999 000-00-00" autoComplete="tel" maxLength={160} required disabled={status === "pending"} aria-invalid={Boolean(errors.contact)} aria-describedby={errors.contact ? "lead-contact-error" : undefined} />
           {errors.contact && <span className="lead-form__error" id="lead-contact-error">{errors.contact}</span>}
         </div>
         <div className="lead-form__field">
           <label htmlFor="lead-origin">Откуда</label>
-          <input id="lead-origin" name="origin" value={form.origin} onChange={update("origin")} placeholder="Город или терминал" maxLength={120} />
+          <input id="lead-origin" name="origin" value={form.origin} onChange={update("origin")} placeholder="Город или терминал" maxLength={120} disabled={status === "pending"} />
         </div>
         <div className="lead-form__field">
           <label htmlFor="lead-destination">Куда</label>
-          <input id="lead-destination" name="destination" value={form.destination} onChange={update("destination")} placeholder="Город назначения" maxLength={120} />
+          <input id="lead-destination" name="destination" value={form.destination} onChange={update("destination")} placeholder="Город назначения" maxLength={120} disabled={status === "pending"} />
         </div>
       </div>
 
       <div className="lead-form__field lead-form__field--wide">
         <label htmlFor="lead-cargo">Коротко о грузе и задаче <span aria-hidden="true">*</span></label>
-        <textarea id="lead-cargo" name="cargo" value={form.cargo} onChange={update("cargo")} placeholder="Что перевезти, откуда и куда, нужна ли помощь с документами" maxLength={2000} rows={4} aria-invalid={Boolean(errors.cargo)} aria-describedby={errors.cargo ? "lead-cargo-error" : undefined} />
+        <textarea id="lead-cargo" name="cargo" value={form.cargo} onChange={update("cargo")} placeholder="Что перевезти, откуда и куда, нужна ли помощь с документами" maxLength={2000} rows={4} required disabled={status === "pending"} aria-invalid={Boolean(errors.cargo)} aria-describedby={errors.cargo ? "lead-cargo-error" : undefined} />
         {errors.cargo && <span className="lead-form__error" id="lead-cargo-error">{errors.cargo}</span>}
       </div>
 
-      <div className="lead-form__honeypot" aria-hidden="true"><label htmlFor="lead-website">Ваш сайт</label><input id="lead-website" name="website" value={form.website} onChange={update("website")} tabIndex={-1} autoComplete="off" /></div>
+      <div className="lead-form__honeypot" aria-hidden="true"><label htmlFor="lead-website">Ваш сайт</label><input id="lead-website" name="website" value={form.website} onChange={update("website")} tabIndex={-1} autoComplete="off" disabled={status === "pending"} /></div>
 
       <div className="lead-form__bottom">
         <div>
           <label className="lead-form__consent">
-            <input type="checkbox" name="consent" checked={form.consent} onChange={(event) => { setForm((current) => ({ ...current, consent: event.target.checked })); setErrors((current) => ({ ...current, consent: undefined })); }} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "lead-consent-error" : "lead-consent-note"} />
+            <input type="checkbox" name="consent" checked={form.consent} onChange={(event) => { setForm((current) => ({ ...current, consent: event.target.checked })); setErrors((current) => ({ ...current, consent: undefined })); if (status !== "idle") setStatus("idle"); }} required disabled={status === "pending"} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "lead-consent-error" : "lead-consent-note"} />
             <span>Даю {site.legalName} согласие обработать данные этой заявки, чтобы ответить на мой запрос.</span>
           </label>
           <p className="lead-form__data-note" id="lead-consent-note">Имя, контакт и сведения о перевозке передаются компании. По вопросам обработки данных: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
@@ -150,6 +152,7 @@ export function LeadForm() {
       </div>
 
       <div className="lead-form__status" role="status" aria-live="polite">
+        {status === "pending" && <p>Отправляем запрос…</p>}
         {status === "success" && <p className="lead-form__status--success">Запрос отправлен. Мы свяжемся с вами по указанному контакту.</p>}
         {status === "error" && <p className="lead-form__status--error">Сейчас не удалось отправить запрос. Данные остались в форме — попробуйте позже или позвоните нам: <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>.</p>}
       </div>

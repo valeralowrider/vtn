@@ -6,6 +6,7 @@ import { MobileNavigation } from "@/components/sections/MobileNavigation";
 export function SiteHeader() {
   return (
     <header className="site-header">
+      <a className="skip-link" href="#main-content">К содержимому</a>
       <Link href="/" aria-label="ВТН ТРАНС — главная">
         <Image src="/images/vtn-trans-logo.svg" alt="ВТН ТРАНС" width={280} height={69} priority />
       </Link>
