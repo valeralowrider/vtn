@@ -27,14 +27,15 @@ h3 { font-weight: 600; line-height: 1.35; letter-spacing: -.02em; }
 .hero-copy, .route-strip { z-index: 2; }
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity .8s ease; }
 .hero-video.is-playing { opacity: 1; }
-.hero-copy { margin-top: clamp(80px, 12vh, 160px); }
+.hero-copy { width: min(1240px, calc(100% - 64px)); max-width: none; margin-top: clamp(80px, 12vh, 160px); }
 .hero-copy h1 { font-size: clamp(48px, 4.7vw, 68px); line-height: 1.1; letter-spacing: -.045em; max-width: 720px; }
 .hero-copy > p:not(.eyebrow) { max-width: 410px; font-size: 18px; }
 .hero-copy > * { animation: hero-arrive .85s cubic-bezier(.2,.7,.2,1) both; }
 .hero-copy h1 { animation-delay: .08s; }
 .hero-copy > p:not(.eyebrow) { animation-delay: .16s; }
 .hero-copy .hero-actions { animation-delay: .24s; }
-.route-strip { width: min(960px, calc(100vw - 64px)); left: max(32px, calc((100vw - 1240px)/2)); transform: none; bottom: 32px; padding: 22px 26px; gap: 24px; border: 1px solid #9fc8ef30; background: linear-gradient(100deg, #06182ff2, #06182fd9); box-shadow: 0 8px 30px #00000020; font-family: var(--font-manrope), Arial, sans-serif; font-size: 19px; font-weight: 700; }
+.hero-actions .button { font-family: var(--font-manrope), Arial, sans-serif; font-size: 17px; font-weight: 700; line-height: 1.3; min-height: 54px; }
+.route-strip { width: min(960px, calc(100% - 64px)); left: max(32px, calc((100% - 1240px)/2)); transform: none; bottom: 32px; padding: 22px 26px; gap: 24px; border: 1px solid #9fc8ef30; background: linear-gradient(100deg, #06182ff2, #06182fd9); box-shadow: 0 8px 30px #00000020; font-family: var(--font-manrope), Arial, sans-serif; font-size: 19px; font-weight: 700; }
 .route-strip span { display: grid; gap: 9px; color: #fff; }
 .route-strip small { font-size: 12px; font-weight: 800; letter-spacing: .09em; color: #aad9ff; }
 .route-strip i { position: relative; height: 2px; min-width: 28px; background: linear-gradient(90deg, #1686e9, #83caff); }
