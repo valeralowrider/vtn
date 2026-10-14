@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { MobileNavigation } from "@/components/sections/MobileNavigation";
 
 export function SiteHeader() {
   return (
@@ -19,6 +20,7 @@ export function SiteHeader() {
         <span className="header-cta-short" aria-hidden>Расчёт</span>
         <span className="header-cta-arrow" aria-hidden>↗</span>
       </Link>
+      <MobileNavigation />
     </header>
   );
 }
