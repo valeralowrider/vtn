@@ -41,6 +41,8 @@ export function SiteFooter() {
         <div className="site-footer__bottom">
           <span>© {new Date().getFullYear()} {site.legalName}</span>
           <span>Информация о перевозке и оформлении не является публичной офертой.</span>
+          <Link href="/politika-konfidentsialnosti">Политика обработки данных</Link>
+          <Link href="/cookies">Cookie</Link>
           <Link href="/dokumenty">Проверить документы <span aria-hidden="true">↗</span></Link>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 import { site } from "@/lib/site";
 import "./lead-form.css";
 
@@ -143,7 +144,7 @@ export function LeadForm() {
             <input type="checkbox" name="consent" checked={form.consent} onChange={(event) => { setForm((current) => ({ ...current, consent: event.target.checked })); setErrors((current) => ({ ...current, consent: undefined })); if (status !== "idle") setStatus("idle"); }} required disabled={status === "pending"} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "lead-consent-error" : "lead-consent-note"} />
             <span>Даю {site.legalName} согласие обработать данные этой заявки, чтобы ответить на мой запрос.</span>
           </label>
-          <p className="lead-form__data-note" id="lead-consent-note">Имя, контакт и сведения о перевозке передаются компании. По вопросам обработки данных: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
+          <p className="lead-form__data-note" id="lead-consent-note">Имя, контакт и сведения о перевозке передаются компании. Подробнее — в <Link href="/politika-konfidentsialnosti">политике обработки данных</Link>. По вопросам: <a href={`mailto:${site.email}`}>{site.email}</a>.</p>
           {errors.consent && <span className="lead-form__error" id="lead-consent-error">{errors.consent}</span>}
         </div>
         <button className="lead-form__submit" type="submit" disabled={status === "pending"}>

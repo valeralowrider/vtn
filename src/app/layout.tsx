@@ -4,6 +4,7 @@ import "./globals.css";
 import "./hero.css";
 import { site } from "@/lib/site";
 import { SiteFooter } from "@/components/sections/SiteFooter";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 
 const manrope = localFont({
   src: "./fonts/Manrope-Variable.ttf",
@@ -49,5 +50,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#06182f", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru" className={manrope.variable}><body>{children}<SiteFooter /></body></html>;
+  return <html lang="ru" className={manrope.variable}><body>{children}<SiteFooter /><CookieConsent /></body></html>;
 }
