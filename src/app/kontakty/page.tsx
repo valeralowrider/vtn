@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { LeadForm } from "@/components/ui/LeadForm";
+import { ContactsMap } from "@/components/ui/ContactsMap";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -20,6 +21,7 @@ export default function ContactsPage() {
 
     <section className="contacts-address"><div className="contacts-address-media"><Image src="/images/intercity-customs-route.webp" alt="Контейнеровоз на междугородном маршруте" fill sizes="(max-width: 850px) 100vw, 45vw" /><span>ВТН ТРАНС · МОСКВА</span></div><div className="contacts-address-copy"><p className="contacts-label">02 / АДРЕС КОМПАНИИ</p><h2>Москва</h2><p className="contacts-address-main">{site.address.postalCode}, {site.address.addressLocality}<br />{site.address.streetAddress}</p><dl><div><dt>Юридическое лицо</dt><dd>{site.legalName}</dd></div><div><dt>ИНН</dt><dd>{site.inn}</dd></div><div><dt>ОГРН</dt><dd>{site.ogrn}</dd></div></dl></div></section>
 
-    <section id="request" className="contacts-request" aria-labelledby="request-heading"><div className="contacts-request-inner"><div className="contacts-request-copy"><p className="contacts-label">03 / ЗАПРОС НА ПЕРЕВОЗКУ</p><h2 id="request-heading">Опишите задачу — мы уточним детали.</h2><p>Укажите маршрут, контакт и коротко расскажите о грузе. Если информации пока мало, достаточно позвонить или написать нам.</p><a href={phoneHref}>{site.phone} <span aria-hidden>↗</span></a></div><LeadForm /></div></section>
+    <ContactsMap />
+    <section id="request" className="contacts-request" aria-labelledby="request-heading"><div className="contacts-request-inner"><div className="contacts-request-copy"><p className="contacts-label">04 / ЗАПРОС НА ПЕРЕВОЗКУ</p><h2 id="request-heading">Опишите задачу — мы уточним детали.</h2><p>Укажите маршрут, контакт и коротко расскажите о грузе. Если информации пока мало, достаточно позвонить или написать нам.</p><a href={phoneHref}>{site.phone} <span aria-hidden>↗</span></a></div><LeadForm /></div></section>
   </main>;
 }
