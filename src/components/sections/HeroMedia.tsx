@@ -11,20 +11,32 @@ export function HeroMedia() {
     const video = videoRef.current;
     if (!video) return;
     let visible = true;
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
     const sync = () => {
+      if (retryTimer) clearTimeout(retryTimer);
       if (document.hidden || !visible) {
         video.pause();
         return;
       }
       void video.play().catch(() => {});
+      // Safari can suspend an inline video while the browser is backgrounded.
+      // A second attempt after the page becomes active resumes it reliably.
+      retryTimer = setTimeout(() => {
+        if (!document.hidden && visible && video.paused) void video.play().catch(() => {});
+      }, 180);
     };
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
     observer.observe(video);
     document.addEventListener("visibilitychange", sync);
+    window.addEventListener("focus", sync);
+    window.addEventListener("pageshow", sync);
     sync();
     return () => {
       observer.disconnect();
       document.removeEventListener("visibilitychange", sync);
+      window.removeEventListener("focus", sync);
+      window.removeEventListener("pageshow", sync);
+      if (retryTimer) clearTimeout(retryTimer);
       video.pause();
     };
   }, []);
