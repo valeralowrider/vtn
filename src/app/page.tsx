@@ -9,6 +9,7 @@ import { HeroMedia } from "@/components/sections/HeroMedia";
 import { TransportScenarios } from "@/components/sections/TransportScenarios";
 import { TransportBroker } from "@/components/sections/TransportBroker";
 import { SpecialConditions } from "@/components/sections/SpecialConditions";
+import { AdditionalServices, ReasonsToChoose } from "@/components/sections/HomeExtras";
 import { IntercityRoute } from "@/components/sections/IntercityRoute";
 import { CompanyProof } from "@/components/sections/CompanyProof";
 import { Clients } from "@/components/sections/Clients";
@@ -26,8 +27,10 @@ export default function Home() {
     <TransportScenarios />
     <TransportBroker />
     <SpecialConditions />
+    <AdditionalServices />
     <IntercityRoute />
     <CompanyProof />
+    <ReasonsToChoose />
     <Clients />
     <Tariffs />
     <RequestSection />

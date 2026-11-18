@@ -18,6 +18,7 @@
 .document-scan-title { margin-top: 20px; color: #f5f9ff; font-family: var(--font-manrope), Arial, sans-serif; font-size: 19px; font-weight: 700; line-height: 1.35; }
 .document-scan-open { margin-top: 12px; color: #94d0ff; font-family: var(--font-manrope), Arial, sans-serif; font-size: 15px; font-weight: 700; }
 .documents-contact { margin-top: 38px; }
+.documents-register-links { display: flex; flex-wrap: wrap; gap: 18px 28px; margin: 28px 0 0; }.documents-register-links a { padding-bottom: 5px; border-bottom: 1px solid currentColor; color: #94d0ff; font-family: var(--font-manrope), Arial, sans-serif; font-size: 14px; font-weight: 800; }
 
 @media (max-width: 700px) {
   .document-scans { grid-template-columns: minmax(0, 1fr); }

@@ -28,6 +28,7 @@ export function SiteFooter() {
             <h2>Компания</h2>
             <Link href="/o-kompanii">О компании</Link>
             <Link href="/dokumenty">Документы и реквизиты</Link>
+            <Link href="/faq">Ответы на вопросы</Link>
             <Link href="/kontakty">Контакты</Link>
           </nav>
           <div className="site-footer__contact">

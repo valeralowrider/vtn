@@ -7,7 +7,7 @@ export const site = {
   phone: "+7 (495) 730-56-09",
   email: "info@vtntrans.ru",
   address: {
-    streetAddress: "пер. Большой Саввинский, д. 2–4–6, стр. 4",
+    streetAddress: "пер. Большой Саввинский, д. 2–4–6, стр. 4, оф. 15",
     addressLocality: "Москва",
     postalCode: "119435",
     addressCountry: "RU",
@@ -28,5 +28,6 @@ export const routes = [
   { href: "/specialnye-perevozki", label: "Специальные перевозки" },
   { href: "/o-kompanii", label: "О компании" },
   { href: "/dokumenty", label: "Документы" },
+  { href: "/faq", label: "FAQ" },
   { href: "/kontakty", label: "Контакты" },
 ] as const;

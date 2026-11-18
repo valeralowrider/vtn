@@ -28,7 +28,7 @@ export function CompanyProof() {
         </div>
         <div className="company-proof-lower">
           <div className="company-proof-copy">
-            <p className="company-proof-lead">ООО «ВТН ТРАНС» — таможенный перевозчик ЕАЭС, включённый в реестр ФТС России. Организуем таможенные и автомобильные перевозки, оформление и сопровождение грузов по всей России. До рейса проверяем вводные, маршрут и документы.</p>
+            <p className="company-proof-lead">ООО «ВТН ТРАНС» — таможенный перевозчик ЕАЭС, включённый в реестр ФТС России. Выполняем таможенные и междугородние автомобильные перевозки по России, организуем международные перевозки и экспедирование — от дверей отправителя до дверей получателя, включая таможенное оформление.</p>
             <Link className="company-proof-link" href="/o-kompanii">Подробнее о компании <span aria-hidden="true">→</span></Link>
           </div>
           <div className="company-proof-registry">

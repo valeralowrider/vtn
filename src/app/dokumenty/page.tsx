@@ -33,6 +33,7 @@ export default function DocumentsPage() {
       <dl className="document-list">
         {documents.map(([term, description], index) => <div key={term}><dt>{String(index + 1).padStart(2, "0")} · {term}</dt><dd>{description}</dd></div>)}
       </dl>
+      <p className="documents-register-links"><a href="https://customs.gov.ru/registers/customs-carriers?number=&name=%D0%92%D0%A2%D0%9D+%D0%A2%D0%A0%D0%90%D0%9D%D0%A1&inn=" target="_blank" rel="noopener noreferrer">Проверить запись в реестре ФТС ↗</a><a href="https://ati.su/firms/9473783/rating" target="_blank" rel="noopener noreferrer">Открыть профиль ВТН ТРАНС на ATI.su ↗</a></p>
       <h2 className="document-scans-heading">Сканы документов</h2>
       <p className="document-scans-intro">На превью показан фрагмент. Откройте документ, чтобы изучить полный скан.</p>
       <div className="document-scans">

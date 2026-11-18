@@ -65,7 +65,7 @@ export function TransportScenarios() {
         <div className="scenarios-copy">
           <p className="eyebrow eyebrow--dark">01 / ЗАДАЧИ, КОТОРЫЕ РЕШАЕМ</p>
           <h2 id="scenarios-heading">Когда нужен<br />таможенный перевозчик</h2>
-          <p className="scenarios-intro">Груз уже в пути или прибыл, но ещё не выпущен. Как таможенный перевозчик из реестра ФТС перевозим его под таможенным контролем; порядок обеспечения платежей уточняем по конкретной перевозке.</p>
+          <p className="scenarios-intro">Груз уже в пути или прибыл, но ещё не выпущен. Как таможенный перевозчик из реестра ФТС перевозим его под таможенным контролем без отдельного обеспечения уплаты платежей — вам не нужны банковская гарантия, залог или поручительство.</p>
           <div className="scenario-options" role="group" aria-label="Выберите сценарий перевозки">
             {scenarios.map((scenario, index) => (
               <button key={scenario.title} type="button" className="scenario-option" aria-pressed={active === index} aria-controls="scenario-illustration" onClick={() => selectScenario(index)}>
