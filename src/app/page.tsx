@@ -11,6 +11,7 @@ import { TransportBroker } from "@/components/sections/TransportBroker";
 import { SpecialConditions } from "@/components/sections/SpecialConditions";
 import { IntercityRoute } from "@/components/sections/IntercityRoute";
 import { CompanyProof } from "@/components/sections/CompanyProof";
+import { Tariffs } from "@/components/sections/Tariffs";
 import { RequestSection } from "@/components/sections/RequestSection";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
@@ -22,6 +23,7 @@ export default function Home() {
     <SpecialConditions />
     <IntercityRoute />
     <CompanyProof />
+    <Tariffs />
     <RequestSection />
   </main>;
 }

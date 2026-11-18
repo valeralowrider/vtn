@@ -7,7 +7,7 @@ export function RequestSection() {
     <section className="request-section" id="request" aria-labelledby="request-heading">
       <div className="request-inner">
         <div className="request-copy">
-          <p className="eyebrow">06 / ЗАПРОС НА ПЕРЕВОЗКУ</p>
+          <p className="eyebrow">07 / ЗАПРОС НА ПЕРЕВОЗКУ</p>
           <h2 id="request-heading">Расскажите о грузе. Остальное уточним вместе.</h2>
           <p className="request-lead">
             Укажите маршрут, контакт и коротко опишите задачу. Мы изучим вводные
