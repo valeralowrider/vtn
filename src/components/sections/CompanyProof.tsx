@@ -28,7 +28,7 @@ export function CompanyProof() {
         </div>
         <div className="company-proof-lower">
           <div className="company-proof-copy">
-            <p className="company-proof-lead">ООО «ВТН ТРАНС» организует таможенные перевозки, оформление и сопровождение груза. До рейса проверяем вводные, маршрут и нужные документы.</p>
+            <p className="company-proof-lead">ООО «ВТН ТРАНС» — таможенный перевозчик ЕАЭС, включённый в реестр ФТС России. Организуем таможенные и автомобильные перевозки, оформление и сопровождение грузов по всей России. До рейса проверяем вводные, маршрут и документы.</p>
             <Link className="company-proof-link" href="/o-kompanii">Подробнее о компании <span aria-hidden="true">→</span></Link>
           </div>
           <div className="company-proof-registry">
@@ -36,7 +36,7 @@ export function CompanyProof() {
             <div className="company-proof-registry-copy">
               <p>ПРОВЕРИТЬ ПЕРЕД НАЧАЛОМ РАБОТЫ</p>
               <h3>Документы и реквизиты — в открытом доступе</h3>
-              <span>Свидетельство ФТС от {site.customsCarrierCertificateIssuedAt}</span>
+              <span>Свидетельство таможенного перевозчика ФТС № {site.customsCarrierCertificate} от {site.customsCarrierCertificateIssuedAt}</span>
               <Link href="/dokumenty">Открыть документы <b aria-hidden="true">→</b></Link>
             </div>
           </div>

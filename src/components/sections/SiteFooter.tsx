@@ -12,7 +12,7 @@ export function SiteFooter() {
             <Link href="/" aria-label="ВТН ТРАНС — главная">
               <Image src="/images/vtn-trans-logo.svg" alt="ВТН ТРАНС" width={250} height={62} />
             </Link>
-            <p>Таможенная перевозка, оформление и сопровождение груза — в одной команде.</p>
+            <p>Таможенный перевозчик в Москве: перевозка под пломбами, оформление и сопровождение груза по России — в одной команде.</p>
           </div>
           <Link href="/kontakty#request" className="site-footer__cta">Обсудить перевозку <span aria-hidden="true">↗</span></Link>
         </div>
