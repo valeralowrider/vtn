@@ -6,14 +6,14 @@ import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 import "./contacts.css";
 
-export const metadata = pageMetadata({ path: "/kontakty", title: "Контакты", description: "Контакты ООО «ВТН ТРАНС» для расчёта таможенной перевозки." });
+export const metadata = pageMetadata({ path: "/kontakty", title: "Контакты ВТН ТРАНС — таможенный перевозчик в Москве", description: "Телефон +7 (495) 730-56-09, info@vtntrans.ru, Москва, пер. Большой Саввинский. Расчёт таможенной перевозки и бесплатная консультация." });
 
 export default function ContactsPage() {
   const phoneHref = `tel:${site.phone.replace(/[^+\d]/g, "")}`;
   return <main className="contacts-page">
     <SiteHeader />
     <section className="contacts-hero" aria-labelledby="main-content">
-      <div className="contacts-hero-copy"><p className="eyebrow">ВТН ТРАНС · НА СВЯЗИ</p><h1 id="main-content" tabIndex={-1}>Обсудим<br />вашу задачу.</h1><p>Позвоните, напишите или оставьте заявку. Начнём с маршрута и вводных по грузу.</p><div className="contacts-hero-links"><a href={phoneHref}><small>ТЕЛЕФОН</small>{site.phone}<span aria-hidden>↗</span></a><a href={`mailto:${site.email}`}><small>ЭЛЕКТРОННАЯ ПОЧТА</small>{site.email}<span aria-hidden>↗</span></a></div></div>
+      <div className="contacts-hero-copy"><p className="eyebrow">ВТН ТРАНС · НА СВЯЗИ</p><h1 id="main-content" tabIndex={-1}>Обсудим<br />вашу задачу.</h1><p>Позвоните, напишите или оставьте заявку — начнём с маршрута и вводных по грузу. Консультация и предварительный расчёт — бесплатно.</p><div className="contacts-hero-links"><a href={phoneHref}><small>ТЕЛЕФОН</small>{site.phone}<span aria-hidden>↗</span></a><a href={`mailto:${site.email}`}><small>ЭЛЕКТРОННАЯ ПОЧТА</small>{site.email}<span aria-hidden>↗</span></a></div></div>
       <div className="contacts-hero-media" aria-hidden="true"><Image src="/images/hero-customs-gate.webp" alt="" fill priority sizes="(max-width: 850px) 100vw, 50vw" /><div><span>МОСКВА</span><b>119435</b><p>пер. Большой Саввинский,<br />д. 2–4–6, стр. 4</p></div></div>
     </section>
 
