@@ -1,4 +1,4 @@
-.hero { min-height: 800px; min-height: max(780px, 92svh); background: #04142b; }
+.hero { min-height: 960px; min-height: max(960px, 100svh); background: #04142b; }
 h1, h2, h3, .eyebrow, .site-header, .hero-copy > p:not(.eyebrow) { font-family: var(--font-manrope), Arial, sans-serif; }
 h1, h2 { font-weight: 600; }
 h2 { line-height: 1.08; letter-spacing: -.045em; }
