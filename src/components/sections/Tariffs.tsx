@@ -57,7 +57,7 @@ export function Tariffs() {
               </div>
             </article>
           })}
-          <p className="tariffs-note"><span aria-hidden="true" />Стоимость с НДС 5%</p>
+          <p className="tariffs-note"><span aria-hidden="true" />НДС 5%</p>
         </div>
       </div>
     </section>
