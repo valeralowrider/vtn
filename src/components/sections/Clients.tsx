@@ -4,7 +4,7 @@ import "./clients.css";
 
 const clients = [
   { name: "ПАО «ОАК»", logo: "/images/clients/uac.webp", description: "Объединённая авиастроительная корпорация" },
-  { name: "АО «Концерн ВКО «Алмаз-Антей»", logo: "/images/clients/almaz-antey.webp", description: "Концерн воздушно-космической обороны" },
+  { name: "АО «Концерн ВКО «Алмаз-Антей»", logo: "/images/clients/almaz-antey-mark.webp", description: "Концерн воздушно-космической обороны" },
   { name: "АО «РТ-Логистика»", logo: "/images/clients/rt-logistics.webp", description: "Логистическая компания" },
 ];
 
