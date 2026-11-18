@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./contacts-map.css";
 
 const address = "Москва, пер. Большой Саввинский, д. 2–4–6, стр. 4";
-const mapUrl = "https://www.openstreetmap.org/export/embed.html?bbox=37.5631%2C55.7336%2C37.5781%2C55.7390&layer=mapnik&marker=55.7362523%2C37.5705814";
+const mapUrl = "https://www.openstreetmap.org/export/embed.html?bbox=37.5631%2C55.7336%2C37.5781%2C55.7390&layer=mapnik&marker=55.7360745267624%2C37.5690988948533";
 
 export function ContactsMap() {
   const [interactive, setInteractive] = useState(false);
